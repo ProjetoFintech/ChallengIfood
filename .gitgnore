@@ -1,0 +1,59 @@
+# Node modules directory
+node_modules/
+
+# Build output directories
+dist/
+build/
+
+# Dependency directories
+bower_components/
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.swp
+
+# Environment files
+.env
+
+# npm package lock files (if you want to exclude them, otherwise remove this line)
+package-lock.json
+yarn.lock
+
+# Compiled CSS files if you use SCSS/SASS
+*.css.map
+*.scss
+*.sass
+
+# Bootstrap specific files (if you have local copies and want to ignore them)
+bootstrap/
+
+# Custom build artifacts (if you use a build tool like Webpack)
+webpack.config.js
+*.map
+
+# Other common files
+*.gzip
+*.zip
+*.tar.gz
+
+# Exclude any personal settings
+*.sublime-workspace
+*.sublime-project
+
+# Exclude any local configuration files
+*.local
+
+# Operating system files
+*~
+ 
