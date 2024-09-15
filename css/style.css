@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #EDEDED;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  .header {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E0E0E0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 8px 20px;
+    height: auto;
+    min-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-logo img {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  .header-menu a {
+    font-size: 1.2rem;
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  .header-menu a:hover {
+    color: #FF5A5F;
+  }
+  
+  body {
+    padding-top: 60px;
+  }
+  
+  body {
+    padding-top: 70px;
+  }
+  
+  .logo-img {
+    width: 80%;
+    max-width: 120px;
+    height: auto;
+  }
+  
+  .sidebar {
+    background-color: #FF2D34;
+    height: 100vh;
+    padding-top: 80px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 200px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar .nav-link {
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    margin: 10px 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    height: auto;
+  }
+  
+  .sidebar .nav-link i {
+    margin-right: 10px;
+  }
+  
+  .sidebar .nav-link:hover {
+    background-color: #d62e3b;
+  }
+  
+  .sidebar .nav-link.active {
+    background-color: transparent;
+  }
+  
+  .sidebar .nav-link:focus, .sidebar .nav-link.active:focus {
+    background-color: #d62e3b;
+  }
+  
+  .main-content {
+    margin-left: 200px;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+    background-color: #F5F5F5;
+  }
+  
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .main-content {
+      margin-left: 250px;
+    }
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .footer {
+    background-color: #F1F1F1;
+    color: #555;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .footer p {
+    margin: 0;
+  }
