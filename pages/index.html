@@ -1,117 +1,224 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minhas Informações</title>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Financeiro</title>
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+  
 </head>
-  <header class="header bg-light d-flex justify-content-between align-items-center p-3 shadow-sm">
-    <div class="header-logo">
-      <img src="https://logopng.com.br/logos/ifood-43.png" alt="Logo" class="img-fluid">
-    </div>
-    <div class="header-menu">
-      <a href="#" class="text-dark me-4">
-        <i class="fas fa-bell"></i>
-      </a>
-      <a href="#" class="text-dark">
-        <i class="fas fa-user-circle"></i>
-      </a>
-    </div>
-  </header>
+
 <body>
-  <div class="container-fluid p-0">
-    <div class="row g-0">
-
-      <div class="col-12 col-md-2 sidebar">
-        <div class="logo text-center my-3">
-        </div>
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fas fa-home"></i> Dashboard Financeiro
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fas fa-search"></i> Consulta de Saldos e Transações
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fas fa-chart-bar"></i> Gestão de Saldos e Transações
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fas fa-shield-alt"></i> Gestão de Pagamentos e Recebíveis
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fas fa-file-alt"></i> Relatórios e Análises Financeiras
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fas fa-cog"></i> Configurações
-            </a>
-          </li>
-        </ul>
-        
-      </div>
-
-      <div class="col-12 col-md-10 main-content">
-        <div class="container py-4">
-          <div class="row">
-            <div class="col-12">
-              <h2>Bem-vindo ao Dashboard</h2>
-              <p>Este é o seu conteúdo principal. Aqui você pode adicionar informações, gráficos, tabelas, etc.</p>
-            </div>
+    <!-- Barra Superior (Topbar) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#">Ifood</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Início</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Sobre</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Contato</a>
+                  </li>
+              </ul>
+              <div class="d-flex align-items-center">
+                  <a href="#" class="me-3">
+                      <i class="lni lni-envelope"></i>
+                  </a>
+                  <a href="#" class="me-3">
+                      <i class="lni lni-cog"></i>
+                  </a>
+                  <a href="#">
+                      <img src="/account.png" class="avatar img-fluid rounded-circle" alt="Avatar">
+                  </a>
+              </div>
           </div>
-          
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Informação 1</h5>
-                  <p class="card-text">Detalhes sobre a primeira seção de conteúdo.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Informação 2</h5>
-                  <p class="card-text">Detalhes sobre a segunda seção de conteúdo.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Informação 3</h5>
-                  <p class="card-text">Detalhes sobre a terceira seção de conteúdo.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-    </div>
-  </div>
+  </nav>
 
-  <footer class="footer">
-    <div class="container text-center">
-      <p>&copy; 2024 Sua Empresa.</p>
-    </div>
-  </footer>
+     <!-- Wrapper com Sidebar e Main -->
+     <div class="wrapper" style="margin-top: 60px;">
+      <!-- Sidebar -->
+      <aside id="sidebar" class="collapsed">
+          <div class="d-flex align-items-center">
+              <button class="toggle-btn" type="button">
+                  <i class="lni lni-grid-alt"></i>
+              </button>
+          </div>
+          <ul class="sidebar-nav">
+              <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">
+                      <i class="lni lni-user"></i>
+                      <span>Profile</span>
+                  </a>
+              </li>
+              <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">
+                      <i class="lni lni-agenda"></i>
+                      <span>Task</span>
+                  </a>
+              </li>
+              <li class="sidebar-item">
+                  <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                      data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
+                      <i class="lni lni-protection"></i>
+                      <span>Auth</span>
+                  </a>
+                  <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                      <li class="sidebar-item">
+                          <a href="#" class="sidebar-link">Login</a>
+                      </li>
+                      <li class="sidebar-item">
+                          <a href="#" class="sidebar-link">Register</a>
+                      </li>
+                  </ul>
+              </li>
+              <li class="sidebar-item">
+                  <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                      data-bs-target="#multi" aria-expanded="false" aria-controls="multi">
+                      <i class="lni lni-layout"></i>
+                      <span>Multi Level</span>
+                  </a>
+                  <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                      <li class="sidebar-item">
+                          <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse"
+                              data-bs-target="#multi-two" aria-expanded="false" aria-controls="multi-two">
+                              Two Links
+                          </a>
+                          <ul id="multi-two" class="sidebar-dropdown list-unstyled collapse">
+                              <li class="sidebar-item">
+                                  <a href="#" class="sidebar-link">Link 1</a>
+                              </li>
+                              <li class="sidebar-item">
+                                  <a href="#" class="sidebar-link">Link 2</a>
+                              </li>
+                          </ul>
+                      </li>
+                  </ul>
+              </li>
+              <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">
+                      <i class="lni lni-popup"></i>
+                      <span>Notification</span>
+                  </a>
+              </li>
+              <li class="sidebar-item">
+                  <a href="#" class="sidebar-link">
+                      <i class="lni lni-cog"></i>
+                      <span>Setting</span>
+                  </a>
+              </li>
+          </ul>
+          <div class="sidebar-footer">
+              <a href="#" class="sidebar-link">
+                  <i class="lni lni-exit"></i>
+                  <span>Logout</span>
+              </a>
+          </div>
+      </aside>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Main Content -->
+        <div class="main main-content">
+            <main class="content px-3 py-4">
+                <div class="container-fluid">
+                    <div class="mb-3">
+                        <h3 class="fw-bold fs-4 mb-3 text-center">Admin Dashboard</h3>
+                        <div class="row">
+                            <!-- Coluna da Tabela com Informações Financeiras -->
+                            <div class="col-md-6">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th>Indicador</th>
+                                            <th>Valor</th>
+                                            <th>Variação</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="financialDataTable" class="text-center">
+                                        <!-- Conteúdo gerado dinamicamente pelo financialData.js -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Coluna dos Gráficos de Desempenho, Entradas/Saídas e Produtos Vendidos -->
+                            <div class="col-md-6 d-flex flex-column justify-content-around">
+                                <div class="card border-0 shadow-sm mb-4">
+                                    <div class="card-body">
+                                        <h5 class="mb-2 fw-bold text-center">Desempenho Financeiro</h5>
+                                        <div class="chart-container">
+                                            <canvas id="graficoDesempenho"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card border-0 shadow-sm mb-4">
+                                    <div class="card-body">
+                                        <h5 class="mb-2 fw-bold text-center">Entradas e Saídas</h5>
+                                        <div class="chart-container">
+                                            <canvas id="graficoEntradasSaidas"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="mb-2 fw-bold text-center">Produtos Mais e Menos Vendidos</h5>
+                                        <div class="chart-container">
+                                            <canvas id="graficoProdutosVendidos"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-body-secondary">
+                        <div class="col-6 text-start">
+                            <a class="text-body-secondary" href="#">
+                                <strong>CodzSwod</strong>
+                            </a>
+                        </div>
+                        <div class="col-6 text-end text-body-secondary d-none d-md-block">
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item">
+                                    <a class="text-body-secondary" href="#">Contact</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="text-body-secondary" href="#">About Us</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="text-body-secondary" href="#">Terms & Conditions</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/components/financialData.js"></script> <!-- Arquivo para dados financeiros -->
+    <script src="../js/components/dashboard.js"></script> <!-- Arquivo para lógica de gráficos -->
+    <script src="../js/main.js"></script
 </body>
+
 </html>
