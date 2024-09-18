@@ -1,0 +1,165 @@
+/* Modo Escuro para o corpo e estrutura geral */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.toggle-btn {
+    outline: none; /* Remove qualquer contorno */
+    box-shadow: none; /* Remove qualquer sombra */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px; /* Ajuste de largura */
+    height: 48px; /* Garantir que a altura corresponda ao sidebar */
+    border: none; /* Remover qualquer borda extra */
+    background-color: transparent; /* Transparente para manter o padrão */
+}
+
+/* Modo escuro para o botão de alternância (toggle button) */
+.toggle-btn.dark-mode {
+    background-color: #1c2833; /* Cor de fundo igual ao sidebar */
+    color: #e0e0e0; /* Cor do ícone no modo escuro */
+    border: none; /* Remove a borda */
+}
+
+.toggle-btn.dark-mode:hover {
+    background-color: #2e4053; /* Cor de hover no modo escuro */
+}
+
+/* Garantir que o ícone dentro do botão esteja centralizado */
+.toggle-btn i {
+    font-size: 1.25rem; /* Ajuste do tamanho do ícone */
+    line-height: 0; /* Remove espaçamento vertical extra */
+}
+
+/* Estilização do ícone dentro do botão no modo escuro */
+.toggle-btn.dark-mode i {
+    color: #f0f0f0; /* Cor branca para o ícone no modo escuro */
+}
+
+/* Remover contornos ao focar e clicar */
+.toggle-btn:focus, .toggle-btn:active {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+.toggle-btn:active, .toggle-btn:hover {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Modo escuro para o header */
+header.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+/* Ícones do header no modo escuro */
+.info-header .nav-icon.dark-mode {
+    color: #f0f0f0;
+}
+
+/* Modo escuro para o sidebar */
+#sidebar.dark-mode {
+    background-color: #1c2833;
+    color: #e0e0e0;
+}
+
+#sidebar.dark-mode .sidebar-link:hover {
+    background-color: #2e4053;
+}
+
+/* Modo escuro para o footer */
+footer.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.dark-mode footer a {
+    color: #f0f0f0 !important;
+}
+
+.dark-mode .footer ul li a {
+    color: #f0f0f0 !important;
+}
+
+.dark-mode .footer ul li a:hover {
+    color: #d3d3d3 !important;
+}
+
+/* Modo escuro para cartões */
+.card.dark-mode {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+}
+
+/* Modo escuro para tabelas */
+.table.dark-mode {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+.table.dark-mode th {
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+}
+
+.table.dark-mode td {
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+}
+
+/* Modo escuro para gráficos */
+.chart-container.dark-mode canvas {
+    background-color: #1f1f1f;
+}
+
+/* Ajustes específicos para o "Resumo Financeiro" */
+#saldoAtual.dark-mode, #saldoReceber.dark-mode, #totalDespesas.dark-mode, 
+#faturamentoBruto.dark-mode, #lucro.dark-mode {
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+}
+
+/* Modo escuro para o extrato mensal */
+.dark-mode table {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+.dark-mode table th {
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+}
+
+.dark-mode table td {
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+}
+
+/* Modo escuro para inputs e botões */
+.dark-mode input, .dark-mode button {
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+/* Foco para links no modo escuro */
+.dark-mode a:focus {
+    outline: 2px solid #f0f0f0;
+}
+
+/* Modo escuro para formulários */
+form.dark-mode input, form.dark-mode select, form.dark-mode textarea {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+form.dark-mode input:focus, form.dark-mode select:focus, form.dark-mode textarea:focus {
+    border-color: #e0e0e0;
+}

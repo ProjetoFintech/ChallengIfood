@@ -1,7 +1,7 @@
-/* Importando fonte Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-* {
+::after,
+::before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -17,57 +17,180 @@ li {
 
 body {
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
 }
-
-/* Wrapper para o layout principal */
-.wrapper {
-    display: flex;
-}
-
-/* Estilo da área principal */
-.main {
-    flex-grow: 1;
+header {
     background-color: #fff;
-    padding: 20px;
-    transition: margin-left 0.3s ease;
-    margin-left: 70px; /* Largura da sidebar quando recolhida */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 80px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-#sidebar.collapsed ~ .main {
-    margin-left: 70px; /* Recolhido */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 100%;
 }
 
-#sidebar:not(.collapsed) ~ .main {
-    margin-left: 250px; /* Expandido */
+.info-header {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espaçamento ajustado */
 }
 
-/* Estilo da sidebar */
+.info-header a,
+.info-header button {
+    margin-left: 15px;
+}
+
+/* Sidebar */
 #sidebar {
-    width: 250px;
-    transition: width 0.3s ease;
-    background-color: #f80000;
+    position:relative;
+    top: 80px;
+    height: 100vh;
+    width: 70px;
+    background-color: #ff0000;
+    transition: all 0.25s ease-in-out;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    height: calc(100vh - 60px); /* A altura é ajustada para ficar abaixo da topbar */
-    position: fixed;
-    top: 60px; /* Sidebar abaixo da topbar */
-    left: 0;
+    justify-content: space-between; /* Para manter o conteúdo ajustado */
 }
 
-#sidebar.collapsed {
-    width: 70px; /* Largura da sidebar quando recolhida */
+#sidebar.expand {
+    width: 260px;
+}
+
+
+#sidebar.expand ~ main {
+    margin-left: 260px;
+}
+
+.sidebar-footer {
+    margin-bottom: 40px; /* Move o ícone de logout para cima, ajustando o valor conforme necessário */
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Ajustes de layout */
+.chart-container {
+    width: 100%;
+    height: 400px;
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        height: 300px;
+    }
+}
+
+.navbar .logo {
+    width: 50px;
+}
+
+.profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Ajuste para os ícones da topbar */
+.nav-icon {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.nav-icon .badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    font-size: 0.75rem;
+}
+
+
+
+.logo{
+height: 50px;
+width: auto;
+
+}
+.profile{
+border-radius: 50%;
+height: 50px;
+width: 50px;
+
+
+}
+
+/* Alinhamento central e lado direito dos ícones */
+
+/* Ícones de notificação e avatar com alinhamento uniforme */
+.info-header .nav-icon {
+    display: flex;
+    align-items: center; /* Garante o alinhamento vertical */
+    font-size: 1.5rem; /* Tamanho do ícone */
+    color: #333;
+    position: relative;
+}
+
+/* Badge de notificação */
+.info-header .nav-icon .badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    font-size: 0.75rem;
+}
+
+/* Avatar com o mesmo alinhamento que os ícones */
+/* .info-header .avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente a imagem do avatar */
+/* } */ */
+/* Wrapper e layout */
+.wrapper {
+    display: flex;
+    margin-top: 60px; /* Ajuste para a altura da header */
+}
+
+/* Header (Topbar) */
+
+/* Estilos da Sidebar */
+#sidebar {
+    position: fixed;
+    top: 80px; /* Ajustar a sidebar abaixo da topbar */
+    height: calc(100vh - 90px);
+    width: 70px;
+    min-width: 70px;
+    z-index: 1000;
+    transition: all 0.25s ease-in-out;
+    background-color: #ff0000;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 80px); /* A sidebar vai ter o tamanho mínimo da viewport menos a altura do header */
+    margin-bottom: 60px; /* Espaçamento extra para evitar sobreposição */
+}
+
+#sidebar.expand {
+    width: 260px;
 }
 
 .toggle-btn {
     background-color: transparent;
     cursor: pointer;
     border: 0;
-    padding: 1rem;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 1001;
+    padding: 1rem 1.5rem;
 }
 
 .toggle-btn i {
@@ -76,108 +199,208 @@ body {
 }
 
 .sidebar-logo {
-    margin: 20px 0;
-    text-align: center;
+    margin: auto 0;
 }
 
 .sidebar-logo a {
     color: #FFF;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 600;
 }
 
-#sidebar.collapsed .sidebar-logo,
-#sidebar.collapsed a.sidebar-link span {
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
     display: none;
 }
 
-/* Navegação da sidebar */
+#sidebar.expand .sidebar-logo,
+#sidebar.expand a.sidebar-link span {
+    animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .sidebar-nav {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-    margin-top: 10px;
+    padding: 2rem 0;
+    flex: 1 1 auto;
 }
 
 a.sidebar-link {
-    padding: 0.75rem;
+    padding: 0.625rem 1.625rem;
     color: #FFF;
-    display: flex;
-    align-items: center;
+    display: block;
     font-size: 0.9rem;
     white-space: nowrap;
-    justify-content: center; /* Centraliza ícones e texto horizontalmente */
     border-left: 3px solid transparent;
-    width: 100%;
-    transition: background-color 0.3s ease, border-left 0.3s ease;
 }
 
-.sidebar-link i {
-    font-size: 1.3rem;
-    margin-right: 10px;
+.sidebar-link i,
+.dropdown-item i {
+    font-size: 1.1rem;
+    margin-right: 0.75rem;
 }
 
 a.sidebar-link:hover {
-    background-color: rgba(255, 255, 255, .075);
+    background-color: rgba(255, 255, 255, 0.075);
     border-left: 3px solid #3b7ddd;
 }
 
-/* Footer da sidebar */
-.sidebar-footer {
-    padding: 10px 0;
-    text-align: center;
-    width: 100%;
-    margin-top: auto; /* Alinha o footer na parte inferior */
+.sidebar-item {
+    position: relative;
+}
+#sidebar.expand ~ main {
+    margin-left: 260px;
 }
 
-#sidebar.collapsed .sidebar-footer {
-    text-align: center;
-}
-
-/* Navbar */
-.navbar {
-    background-color: #f5f5f5;
-    box-shadow: 0 0 2rem 0 rgba(33, 37, 41, .1);
-    height: 60px;
-    position: fixed;
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+    position: absolute;
     top: 0;
-    width: 100%;
-    z-index: 1001;
+    left: 70px;
+    background-color: #0e2238;
+    padding: 0;
+    min-width: 15rem;
+    display: none;
 }
 
-/* Responsividade para telas menores */
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
+    display: block;
+    max-height: 15em;
+    width: 100%;
+    opacity: 1;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 0.075rem 0.075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all 0.2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all 0.2s ease-out;
+}
+
+/* Navbar (Topbar) */
+.navbar-nav .nav-icon {
+    font-size: 1.5rem;
+    color: #333;
+    position: relative;
+    
+}
+
+.navbar-nav .nav-icon .badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.75rem;
+    align-items: center;
+}
+
+.navbar-nav .avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    align-items: center;
+
+}
+
+
+/* Responsividade da Topbar */
 @media (max-width: 768px) {
-    #sidebar {
-        position: fixed;
-        height: calc(100vh - 60px);
-        top: 60px;
-        left: -250px;
-        width: 250px;
-        transition: all 0.3s;
+    .topbar {
+        padding: 10px;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    #sidebar.collapsed {
-        left: -70px;
-        width: 70px;
+    .navbar-nav {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
     }
 
-    .main {
-        margin-left: 70px;
+    .navbar-nav .nav-item {
+        margin-left: 10px;
     }
+}
 
-    #sidebar.collapsed ~ .main {
-        margin-left: 70px;
-    }
+/* Main Content */
+main {
+    margin-left: 70px;
+    margin-top: 60px;
+    transition: margin-left 0.25s ease-in-out;
+    min-height: calc(100vh - 10px); /* Garante que o conteúdo não seja coberto pelo footer */
+}
 
-    #sidebar:not(.collapsed) ~ .main {
-        margin-left: 250px;
-    }
+/* Footer */
+.footer {
+    padding: 20px 0;
+    background-color: #f5f5f5;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
 
-    .toggle-btn {
-        display: inline-block;
-        top: 10px;
-        left: 10px;
+.footer a {
+    color: #666;
+    text-decoration: none;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer ul li a {
+    color: #666;
+    text-decoration: none;
+}
+
+/* Responsividade Geral */
+@media (max-width: 768px) {
+    .footer ul li {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
     }
+}
+/* Garantir que os gráficos sejam responsivos */
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        height: 300px;
+    }
+}
+
+/* Adicionando transição suave */
+.chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
 }
